@@ -1,6 +1,7 @@
 package br.com.diegoalexandrooliveira.ifood.pagamentos.usuario.dominio;
 
 import br.com.diegoalexandrooliveira.ifood.pagamentos.forma_pagamento.dominio.FormaPagamento;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.Set;
 
 @Entity
 @NoArgsConstructor
+@Getter
 public class Usuario {
 
     @Id

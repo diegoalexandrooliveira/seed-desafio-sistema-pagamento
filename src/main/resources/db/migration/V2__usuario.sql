@@ -15,6 +15,6 @@ insert into usuario (email) values ('diego@gmail.com');
 insert into usuario (email) values ('joao@gmail.com');
 
 insert into usuario_forma_pagamento (id_usuario, id_forma_pagamento) values (1,1);
-insert into usuario_forma_pagamento (id_usuario, id_forma_pagamento) values (1,2);
-insert into usuario_forma_pagamento (id_usuario, id_forma_pagamento) values (2,3);
+insert into usuario_forma_pagamento (id_usuario, id_forma_pagamento) values (1,3);
+insert into usuario_forma_pagamento (id_usuario, id_forma_pagamento) values (2,2);
 insert into usuario_forma_pagamento (id_usuario, id_forma_pagamento) values (2,4);
