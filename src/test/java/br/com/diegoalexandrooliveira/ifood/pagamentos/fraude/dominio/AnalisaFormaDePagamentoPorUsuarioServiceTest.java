@@ -12,7 +12,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -38,9 +38,8 @@ class AnalisaFormaDePagamentoPorUsuarioServiceTest {
 
         List<FormaPagamento> formasFiltradas = analisaFormaDePagamentoPorUsuarioService.filtrar(formaPagamentos, 1L);
 
-        assertEquals(2, formasFiltradas.size());
-        assertEquals(ModoPagamento.ONLINE, formasFiltradas.get(0).getModoPagamento());
-        assertEquals(ModoPagamento.OFFLINE, formasFiltradas.get(1).getModoPagamento());
+        assertThat(formasFiltradas).hasSize(2);
+        assertThat(formasFiltradas).extracting("modoPagamento").contains(ModoPagamento.ONLINE, ModoPagamento.OFFLINE);
     }
 
 
@@ -63,8 +62,8 @@ class AnalisaFormaDePagamentoPorUsuarioServiceTest {
 
         List<FormaPagamento> formasFiltradas = analisaFormaDePagamentoPorUsuarioService.filtrar(formaPagamentos, 1L);
 
-        assertEquals(1, formasFiltradas.size());
-        assertEquals(ModoPagamento.OFFLINE, formasFiltradas.get(0).getModoPagamento());
+        assertThat(formasFiltradas).hasSize(1);
+        assertThat(formasFiltradas).extracting("modoPagamento").containsOnly(ModoPagamento.OFFLINE);
     }
 
 }
